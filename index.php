@@ -2,7 +2,7 @@
     if (isset($_POST['submit'])) {
 	
     //check to make sure all fields completed
-    $fieldcheck = array('fname', 'lname', 'desc', 'urgency', 'city', 'state', 'zip');
+    $fieldcheck = array('fname', 'lname', 'desc', 'urgency');
     $error = FALSE;
     foreach ($fieldcheck as $f) {
         if (empty($_POST[$f])) {
@@ -16,7 +16,7 @@
         exit();
     }
     else {
-
+        print_r($_POST);
     } 
 }
 		
@@ -76,16 +76,26 @@
 
 
 
-                <div class="row">
+                <div>
                     <div class="small-4 columns">
                         <label class="inline left" for="urgency">Level of Urgency</label>
                     </div>
-                    <div class="small-10 columns">
-                        <input type="radio" name="urgency" value="male" checked> Low<br>
-                        <input type="radio" name="urgency" value="female"> Medium<br>
-                        <input type="radio" name="urgency" value="other"> High
+                    <div class="radiogroup">
+                        
+                        <label for="low">Low</label>    
+                        <input type="radio" id="low" name="urgency" value="low" checked>
+                        
+                        <label for="medium">Medium</label>
+                        <input type="radio" id="medium" name="urgency" value="medium">
+                        
+                        <label for="high">High</label>
+                        <input type="radio" id="high" name="urgency" value="high">
+                        
                     </div>
-                </div>    
+                </div>   
+
+                
+
                 
                 
             </fieldset>   

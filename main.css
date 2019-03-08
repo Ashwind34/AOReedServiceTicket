@@ -23,11 +23,13 @@ form {
         width: 300px;
         box-sizing: border-box; /* To harmonize the look & feel of text field border */
         border: 1px solid #999;
+        text-align: left;
+        
     }
 
     input:focus, textarea:focus {
     /* To give a little highlight on active elements */
-        border-color: #000;
+        border-color: rgb(151, 29, 29);
     }
 
     textarea {
@@ -61,4 +63,12 @@ form {
     }
     a:visited {
         color:red;
+    }
+
+    .radiogroup {
+        display:inline-block;
+        text-align:center;
+    }
+    .radiogroup label input {
+        display:block;
     }
