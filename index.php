@@ -16,7 +16,7 @@
         exit();
     }
     else {
-        print_r($_POST);
+        
     } 
 }
 		
@@ -34,7 +34,7 @@
         <title>Service Ticket Request</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="main.css">
+        <!-- <link rel="stylesheet" href="main.css"> -->
     </head>
     <body>
 
@@ -77,22 +77,25 @@
 
 
                 <div>
-                    <div class="small-4 columns">
+                    <!-- <div class="small-4 columns"> -->
+                    <div>
                         <label class="inline left" for="urgency">Level of Urgency</label>
                     </div>
                     <div class="radiogroup">
-                        
                         <label for="low">Low</label>    
                         <input type="radio" id="low" name="urgency" value="low" checked>
-                        
+                    </div>
+                    <div class="radiogroup">    
                         <label for="medium">Medium</label>
                         <input type="radio" id="medium" name="urgency" value="medium">
-                        
+                    </div>    
+                    <div class="radiogroup">
                         <label for="high">High</label>
                         <input type="radio" id="high" name="urgency" value="high">
-                        
                     </div>
                 </div>   
+
+                
 
                 
 
