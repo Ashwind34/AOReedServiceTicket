@@ -1,28 +1,3 @@
-<?php
-    if (isset($_POST['submit'])) {
-	
-    //check to make sure all fields completed
-    $fieldcheck = array('fname', 'lname', 'desc', 'urgency');
-    $error = FALSE;
-    foreach ($fieldcheck as $f) {
-        if (empty($_POST[$f])) {
-           $error = TRUE;
-       }
-    }
-    if($error) {
-        echo '<br><p style="font-size:20px">Please complete all fields.</p>';
-        echo '<br><p style="font-size:20px;"><a href="ticketform.php">Try Again</a></p>';
-        echo '<br><p><a href="../../index.php">Return to Homepage</a></p>';
-        exit();
-    }
-    else {
-        
-    } 
-}
-		
-	
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -41,7 +16,7 @@
 <p><img src="" alt="logo" height="315" width="600"></p>
 <br>
 
-<form action="index.php" method="post">
+<form action="ticket_request.php" method="post">
 
 <div class="row">
         <div class="large-8 small-centered columns">
@@ -55,6 +30,15 @@
                         <input type="text" id="fname" name="fname"></input>
                     </div>
                 </div>    
+                <div class="row">
+                    <div class="small-2 columns">
+                        <label class="inline left" for="lname">Last Name</label>
+                    </div>
+                    <div class="small-10 columns">
+                        <input type="text" id="lname" name="lname"></input>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="small-2 columns">
                         <label class="inline left" for="lname">Last Name</label>
