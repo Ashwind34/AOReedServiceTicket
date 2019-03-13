@@ -1,12 +1,13 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
 $subdomain = "Aorhelpdesk";
 $username  = "email@example.com"; // email
-$token     = ""; // API key
+$token     =  $key; // API key - NEED TO UPDATE FOR SECURITY
 
 $client = new ZendeskAPI($subdomain);
 $client->setAuth('basic', ['username' => $username, 'token' => $token]);
