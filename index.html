@@ -16,7 +16,7 @@
 <p><img src="" alt="logo" height="315" width="600"></p>
 <br>
 
-<form action="ticket_request.php" method="post">
+<form action="ticket_request.php" method="post" enctype="multipart/form-data">
 
 <div class="row">
         <div class="large-8 small-centered columns">
@@ -57,11 +57,7 @@
                         <textarea name="desc" rows="10" cols="50"></textarea>
                     </div>
                 </div>    
-
-
-
                 <div>
-                    <!-- <div class="small-4 columns"> -->
                     <div>
                         <label class="inline left" for="urgency">Level of Urgency</label>
                     </div>
@@ -79,17 +75,20 @@
                     </div>
                 </div>   
 
-                
-
-                
-
-                
-                
+                <div>
+                    <div class="small-4 columns">
+                        <label class="inline-left" for="image">Upload Screen Shot</label>
+                    </div>
+                    <div>
+                        <input type="file" name="image" value="Upload Screen Shot">
+                    </div>
+                </div>          
+    
             </fieldset>   
         </div>
     </div>
 	
-	<p><input type="submit" name="submit" value="Request Tickets"></p>
+	<p><input type="submit" name="submit" value="Submit Support Request"></p>
 	
 	<p><a href="../../index.php">Return to Homepage</a></p>
 
