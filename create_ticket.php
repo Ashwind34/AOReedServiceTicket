@@ -2,37 +2,46 @@
 
 
 //CREATE A FUNCTION USING THIS CODE THAT TAKES THE $_POST VARIABLES AS ARGUMENTS - CHECK FOR SCOPING!!
+//MAY NEED TO ADD $KEY, $UPLOAD PARAMETER TO FUNCTION
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
-$subdomain = "Aorhelpdesk";
-$username  = "email@example.com"; // email
-$token     =  $key; // API key - NEED TO UPDATE FOR SECURITY
+function create_ticket($email, $body, $urgency, $key){
 
-$client = new ZendeskAPI($subdomain);
-$client->setAuth('basic', ['username' => $username, 'token' => $token]);
+    // require 'vendor/autoload.php';
+    //require_once 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
-//create attachment
+    // use Zendesk\API\HttpClient as ZendeskAPI;
 
-$attachment = $client->attachments()->upload([
-    'file' => getcwd().'/tests/assets/UK.png',
-    'type' => 'image/png',
-    'name' => 'UK.png' // Optional parameter, will default to filename.ext
-]);
+    $subdomain = "Aorhelpdesk";
+    $username  = $email; // email
+    $token     =  $key; // API key - NEED TO UPDATE FOR SECURITY
 
-// Create a new ticket
-$newTicket = $client->tickets()->create([
-    'subject'  => 'The quick brown fox jumps over the lazy dog',
-    'comment'  => [
-        'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' .
-                  'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'uploads' => [$attachment->upload->token]
-    ],
-    'priority' => 'normal'
-]);
-print_r($newTicket);
+    $client = new ZendeskAPI($subdomain);
+    $client->setAuth('basic', ['username' => $username, 'token' => $token]);
+
+    //create attachment
+
+    // $attachment = $client->attachments()->upload([
+    //     'file' => getcwd().'/tests/assets/UK.png',
+    //     'type' => 'image/png',
+    //     'name' => 'UK.png' // Optional parameter, will default to filename.ext
+    // ]);
+
+    // Create a new ticket
+    $newTicket = $client->tickets()->create([
+        'subject'  => 'The quick brown fox jumps over the lazy dog',
+        'comment'  => [
+            'body' => $body 
+
+            // ,'uploads' => [$attachment->upload->token]
+        ],
+        'priority' => $urgency
+    ]);
+    print_r($newTicket);
+}
 
 ?>
