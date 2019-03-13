@@ -1,8 +1,6 @@
 <?php
 
-
-//CREATE A FUNCTION USING THIS CODE THAT TAKES THE $_POST VARIABLES AS ARGUMENTS - CHECK FOR SCOPING!!
-//MAY NEED TO ADD $KEY, $UPLOAD PARAMETER TO FUNCTION
+//NEED TO ADD $UPLOAD PARAMETER AND ATTACHMENTS FUNCTIONALITY
 
 require_once 'vendor/autoload.php';
 require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
@@ -10,11 +8,6 @@ require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
 function create_ticket($email, $body, $urgency, $key){
-
-    // require 'vendor/autoload.php';
-    //require_once 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
-
-    // use Zendesk\API\HttpClient as ZendeskAPI;
 
     $subdomain = "Aorhelpdesk";
     $username  = $email; // email
@@ -33,7 +26,7 @@ function create_ticket($email, $body, $urgency, $key){
 
     // Create a new ticket
     $newTicket = $client->tickets()->create([
-        'subject'  => 'The quick brown fox jumps over the lazy dog',
+        'subject'  => 'Web-Based Ticket Request',
         'comment'  => [
             'body' => $body 
 
