@@ -3,101 +3,64 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Service Ticket Request</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="main.css"> -->
-    </head>
-    <body>
-
-<p><img src="" alt="logo" height="315" width="600"></p>
-<br>
-
-<form action="ticket_request.php" method="post" enctype="multipart/form-data">
-
-<div class="row">
-        <div class="large-8 small-centered columns">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Service Ticket Request</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="zdtemplate.css">
+</head>
+<body>
+    
+    <p><img src="" alt="logo" height="315" width="600"></p>
+    <br>
+    <div id="ticket_form">
+        <form action="ticket_request.php" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend style="color:yellow;font-size:25px;"><b>Ticket Request</b></legend>
-                <div class="row">
-                    <div class="small-2 columns">
-                        <label for="fname">First Name</label>
-                    </div>
-                    <div class="small-10 columns">
-                        <input type="text" id="fname" name="fname"></input>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="small-2 columns">
-                        <label class="inline left" for="lname">Last Name</label>
-                    </div>
-                    <div class="small-10 columns">
-                        <input type="text" id="lname" name="lname"></input>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="small-2 columns">
-                        <label class="inline left" for="lname">Company Email</label>
-                    </div>
-                    <div class="small-10 columns">
-                        <input type="email" id="email" name="email"></input>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="small-4 columns">
-                        <label class="inline left" for="desc">Description of Issue</label>
-                    </div>
-                    <div class="small-10 columns">
-                        <textarea name="desc" rows="10" cols="50"></textarea>
-                    </div>
-                </div>    
-                <div>
-                    <div>
-                        <label class="inline left" for="urgency">Level of Urgency</label>
-                    </div>
-                    <div class="radiogroup">
-                        <label for="low">Low</label>    
-                        <input type="radio" id="low" name="urgency" value="low" checked>
-                    </div>
-                    <div class="radiogroup">    
-                        <label for="medium">Medium</label>
-                        <input type="radio" id="medium" name="urgency" value="medium">
-                    </div>    
-                    <div class="radiogroup">
-                        <label for="high">High</label>
-                        <input type="radio" id="high" name="urgency" value="high">
-                    </div>
-                </div>   
-
-                <div>
-                    <div class="small-4 columns">
-                        <label class="inline-left" for="image">Upload Screen Shot</label>
-                    </div>
-                    <div>
-                        <input type="file" name="image" value="Upload Screen Shot">
-                    </div>
-                </div>          
-    
-            </fieldset>   
-        </div>
+                    <ul>
+                        <li>
+                            <label for="email">Company Email</label>
+                            <input type="email" id="email" name="email"></input>
+                        </li>
+                        <li>
+                            <label for="subject">Subject</label>
+                            <input type="text" placeholder="ticket subject" 
+                            name="subject" class="field" required>
+                        </li>                            
+                        <li>
+                            <label for="desc">Description of Issue</label>
+                            <textarea name="desc" rows="10" cols="50"></textarea>
+                        </li>
+                        <li>
+                            <div>
+                                <div>
+                                    <label for="urgency">Level of Urgency</label>
+                                </div>
+                                <div class="radiogroup">
+                                    <label for="low">Low</label>    
+                                    <input type="radio" id="low" name="urgency" value="low" checked>
+                                </div>
+                                <div class="radiogroup">    
+                                    <label for="medium">Medium</label>
+                                    <input type="radio" id="medium" name="urgency" value="medium">
+                                </div>    
+                                <div class="radiogroup">
+                                    <label for="high">High</label>
+                                    <input type="radio" id="high" name="urgency" value="high">
+                                </div>
+                            </div>  
+                        </li>
+                        <li>
+                            <label class="inline-left" for="image">Upload Screen Shot</label>
+                            <input type="file" name="image" value="Upload Screen Shot">
+                        </li>
+                    </ul>
+            </fieldset>    
+            <p><input type="submit" name="submit" value="Submit Support Request"></p>
+            <p><a href="../../index.php">Return to Homepage</a></p>
+        </form>
     </div>
-	
-	<p><input type="submit" name="submit" value="Submit Support Request"></p>
-	
-	<p><a href="../../index.php">Return to Homepage</a></p>
-
-</form>
-
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+</body>
 </html>
