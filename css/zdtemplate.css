@@ -27,7 +27,6 @@ src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
 
 
 #ticket_form {
-    /* font-family: Verdana, Helvetica, sans-serif; */
     font-size: 10pt;
     width: 240px;
     padding: 0 8px;
@@ -42,7 +41,7 @@ src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
 .legend {
     color: #d75229;
     font-size: 25px;
-    font-family: 'Gotham Book';
+    font-family: 'Gotham Bold';
 }
 
 form ul {
@@ -53,6 +52,7 @@ form ul {
 
 form li {
     margin: 0 0 6px 0;
+    font-family: 'Gotham Book'
 }
 
 textarea {
