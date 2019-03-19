@@ -1,16 +1,19 @@
 @font-face {
-    font-family: 'Gotham Book';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gotham Book'), url('GothamBook.woff') format('woff');
-    }
+font-family: 'Gotham Book';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff') format('woff'),
+     local('Gotham Book'), url('./Fonts/Gotham/GothamBook.ttf') format('truetype');
+    
+}
     
     
 @font-face {
 font-family: 'Gotham Book Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Gotham Book Italic'), url('GothamBookItalic.woff') format('woff');
+src: local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff') format('woff'),
+     local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.ttf') format('truetype');
 }
 
 
@@ -18,12 +21,13 @@ src: local('Gotham Book Italic'), url('GothamBookItalic.woff') format('woff');
 font-family: 'Gotham Bold';
 font-style: normal;
 font-weight: normal;
-src: local('Gotham Bold'), url('GothamBold.woff') format('woff');
+src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
+     local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff');
 }
 
 
 #ticket_form {
-    font-family: Verdana, Helvetica, sans-serif;
+    /* font-family: Verdana, Helvetica, sans-serif; */
     font-size: 10pt;
     width: 240px;
     padding: 0 8px;
@@ -38,7 +42,7 @@ src: local('Gotham Bold'), url('GothamBold.woff') format('woff');
 .legend {
     color: #d75229;
     font-size: 25px;
-    font-family: Gotham Bold;
+    font-family: 'Gotham Book';
 }
 
 form ul {
