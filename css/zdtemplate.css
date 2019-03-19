@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Gotham Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Book'), url('GothamBook.woff') format('woff');
+    }
+    
+    
+@font-face {
+font-family: 'Gotham Book Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Book Italic'), url('GothamBookItalic.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Gotham Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Gotham Bold'), url('GothamBold.woff') format('woff');
+}
+
+
+#ticket_form {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 10pt;
+    width: 240px;
+    padding: 0 8px;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 12px 0 0;
+}
+
+.legend {
+    color: #d75229;
+    font-size: 25px;
+    font-family: Gotham Bold;
+}
+
+form ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: #58595b;
+}
+
+form li {
+    margin: 0 0 6px 0;
+}
+
+textarea {
+    vertical-align: top;
+    border-color: lightgray;
+}
+
+.field {
+    width: 100%;
+}
