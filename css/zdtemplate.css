@@ -63,3 +63,24 @@ textarea {
 .field {
     width: 100%;
 }
+
+::-webkit-input-placeholder {
+    color: #777;
+    font-family: 'Gotham Book Italic'
+    /* font-size: 13px; */
+  }
+  ::-moz-placeholder {
+    color: #777;
+    font-family: 'Gotham Book Italic'
+    /* font-size: 13px; */
+  }
+  :-ms-input-placeholder {
+    color: #777;
+    font-family: 'Gotham Book Italic'
+    /* font-size: 13px; */
+  }
+  ::placeholder {
+    color: #777;
+    font-family: 'Gotham Book Italic'
+    /* font-size: 13px; */
+  }
