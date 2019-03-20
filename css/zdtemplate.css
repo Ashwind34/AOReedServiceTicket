@@ -60,7 +60,7 @@ textarea {
     border-color: lightgray;
 }
 
-.submit {
+input[type=submit] {
     background: #d75229;
     color: #fff;
     border: 2px solid #d75229;
@@ -72,7 +72,13 @@ textarea {
     font-family: "Gotham Bold";
 }
 
-input[type=file] {
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
     color: #d75229;
     border: 2px solid #000;
     background: transparent;
@@ -83,7 +89,15 @@ input[type=file] {
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 0;
-}
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
 
 .field {
     width: 100%;
