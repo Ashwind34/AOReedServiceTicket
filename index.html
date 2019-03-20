@@ -12,22 +12,20 @@
     <link rel="stylesheet" href="./css/zdtemplate.css">
 </head>
 <body>
-    <p><img src="img/logo1.png" alt="logo"></p>
-    <br>
     <div id="ticket_form">
         <form action="ticket_request.php" method="post" enctype="multipart/form-data">
         <!-- <form action="index.html" method="post" enctype="multipart/form-data"></form> -->
             <fieldset>
                 <legend class="legend"><b>Ticket Request</b></legend>
+                    <p class="right"><img src="img/logo1.png" alt="logo"></p>
                     <ul>
                         <li>
                             <label for="email">Company Email</label><br>
                             <input type="email" placeholder="example@aoreed.com" id="email" name="email"></input>
                         </li>                        
                         <li>
-                            <label for="subject">Subject</label>
-                            <input type="text" placeholder="Subject" 
-                            name="subject" class="field" required>
+                            <label for="subject">Subject</label><br>
+                            <input type="text" placeholder="Subject" name="subject" required>
                         </li>                            
                         <li>
                             <label for="desc">Description of Issue</label>
@@ -38,30 +36,29 @@
                                 <div>
                                     <label for="urgency">Level of Urgency</label>
                                 </div>
-                                <div class="radiogroup">
-                                    <!-- <label for="low">Low</label>     -->
+                                <div class="radiogroup">                                 
                                     <input type="radio" id="low" name="urgency" value="low" checked>Low<br>
                                 </div>
-                                <div class="radiogroup">    
-                                    <!-- <label for="medium">Medium</label> -->
+                                <div class="radiogroup">                                  
                                     <input type="radio" id="medium" name="urgency" value="medium">Medium<br>
                                 </div>    
-                                <div class="radiogroup">
-                                    <!-- <label for="high">High</label> -->
+                                <div class="radiogroup">                                    
                                     <input type="radio" id="high" name="urgency" value="high">High<br>
                                 </div>
-                            </div>  
+                            </div> 
                         </li>
                         <br>
                         <li>
-                            <label class="inline-left" for="image">Upload Screen Shot</label>
-                            <br>
-                            <div class="upload-btn-wrapper">
-                                <button class="btn">Upload a file</button>
-                                <input type="file" name="upload" value="upload">
+                            <div>
+                                <label for="image">Upload Screen Shot</label><br>
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn">Upload a file</button>
+                                    <input type="file" name="upload" value="upload">
+                                </div>
                             </div>
                         </li>
                     </ul>
+                    
             </fieldset>    
             <p><input class="submit" type="submit" name="submit" value="Submit Support Request"></p>
             

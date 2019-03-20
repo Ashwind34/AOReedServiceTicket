@@ -45,6 +45,10 @@ src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
     font-family: 'Gotham Bold';
 }
 
+.right {
+  float: right;
+}
+
 form ul {
     list-style-type: none;
     padding-left: 0;
