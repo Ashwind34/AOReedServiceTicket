@@ -26,7 +26,7 @@
                         </li>                        
                         <li>
                             <label for="subject">Subject</label>
-                            <input type="text" placeholder="Brief Description Here" 
+                            <input type="text" placeholder="Subject" 
                             name="subject" class="field" required>
                         </li>                            
                         <li>
@@ -39,21 +39,23 @@
                                     <label for="urgency">Level of Urgency</label>
                                 </div>
                                 <div class="radiogroup">
-                                    <label for="low">Low</label>    
-                                    <input type="radio" id="low" name="urgency" value="low" checked>
+                                    <!-- <label for="low">Low</label>     -->
+                                    <input type="radio" id="low" name="urgency" value="low" checked>Low<br>
                                 </div>
                                 <div class="radiogroup">    
-                                    <label for="medium">Medium</label>
-                                    <input type="radio" id="medium" name="urgency" value="medium">
+                                    <!-- <label for="medium">Medium</label> -->
+                                    <input type="radio" id="medium" name="urgency" value="medium">Medium<br>
                                 </div>    
                                 <div class="radiogroup">
-                                    <label for="high">High</label>
-                                    <input type="radio" id="high" name="urgency" value="high">
+                                    <!-- <label for="high">High</label> -->
+                                    <input type="radio" id="high" name="urgency" value="high">High<br>
                                 </div>
                             </div>  
                         </li>
+                        <br>
                         <li>
                             <label class="inline-left" for="image">Upload Screen Shot</label>
+                            <br>
                             <div class="upload-btn-wrapper">
                                 <button class="btn">Upload a file</button>
                                 <input type="file" name="upload" value="upload">
@@ -62,8 +64,9 @@
                     </ul>
             </fieldset>    
             <p><input class="submit" type="submit" name="submit" value="Submit Support Request"></p>
-            <p><a href="./ticket_request.php">Return to Homepage</a></p>
+            
         </form>
     </div>
+    <p><a href="http://www.aoreed.com" font-size='14px'>Return to Homepage</a></p>
 </body>
 </html>

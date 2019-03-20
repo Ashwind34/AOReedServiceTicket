@@ -40,7 +40,8 @@ src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
 
 .legend {
     color: #d75229;
-    font-size: 25px;
+    font-size: 20px;
+    /* font-size: 2vw; */
     font-family: 'Gotham Bold';
 }
 
@@ -58,6 +59,21 @@ form li {
 textarea {
     vertical-align: top;
     border-color: lightgray;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+label {
+    font-size: 16px;
+    /* font-size: 1.1vw */
+}
+
+input {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }
 
 input[type=submit] {
@@ -70,6 +86,7 @@ input[type=submit] {
     text-transform: uppercase;
     font-style: normal;
     font-family: "Gotham Bold";
+    font-weight: bold;
 }
 
 .upload-btn-wrapper {
@@ -89,6 +106,9 @@ input[type=submit] {
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 0;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
   .upload-btn-wrapper input[type=file] {
@@ -101,6 +121,11 @@ input[type=submit] {
 
 .field {
     width: 100%;
+}
+
+.radiogroup{
+    font-size: 14px;
+    /* font-size: 0.8vw; */
 }
 
 ::-webkit-input-placeholder {
