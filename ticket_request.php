@@ -1,11 +1,8 @@
 <?php
-            
-// logic for popping @aoreed from email submit
-            
 
+//CHECK WITH TIM TO SEE IF WE NEED REDUNDANT ERROR CHECKING
 
-//function to check to see if all filds submitted.  
-//NEED TO INCORPORATE THIS INTO SCRIPT AND ALSO CHECK FOR @AOREED.COM DOMAIN
+//function to check to see if all filds submitted.
 
 function fieldcheck() {
     $fieldcheck = array('email', 'subject', 'desc', 'urgency');
@@ -18,6 +15,8 @@ function fieldcheck() {
 
     return $submit_error;
 }
+
+//function to check to see if email is an @aoreed.com email address
 
 function domaincheck() {
     $domain_error = FALSE;
@@ -33,6 +32,7 @@ function domaincheck() {
     if (isset($_POST['submit'])) {
 	
         //check to make sure all fields completed
+        //MAY NOT BE NECESSARY
         $fieldcheck = array('email', 'subject', 'desc', 'urgency');
         $error = FALSE;
         foreach ($fieldcheck as $f) {
@@ -48,6 +48,7 @@ function domaincheck() {
     else {
 
         //call create_ticket() to make api post request
+        //NEED TO SANITIZE INPUT DATA FOR API CALL
 
         require_once 'create_ticket.php';
         $email = $_POST['email'];
@@ -59,12 +60,6 @@ function domaincheck() {
         create_ticket($email, $subject, $body, $urgency, $api_key);
         
         echo '<br>';
-        if(fieldcheck()){
-            echo 'Error';
-        } else {
-            echo 'No Error';
-        };
-        echo getErrorDetails();
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
         echo'<br>';
