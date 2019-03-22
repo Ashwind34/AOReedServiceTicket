@@ -25,7 +25,8 @@ function create_ticket($email, $subject, $body, $urgency, $key){
     // ]);
 
     // Create a new ticket
-    $newTicket = $client->tickets()->create([
+    try {
+        $newTicket = $client->tickets()->create([
         'subject'  => $subject,
         'comment'  => [
             'body' => $body 
@@ -34,6 +35,13 @@ function create_ticket($email, $subject, $body, $urgency, $key){
         ],
         'priority' => $urgency
     ]);
+    }
+    catch (Exception $e) {
+        //echo 'Message: '.$e->getMessage();
+        echo '<br><p style="font-size:20px">Submission Error.  Please check your @aoreed.com email and try again.</p>';
+        echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
+        
+    }
 }
 
 ?>

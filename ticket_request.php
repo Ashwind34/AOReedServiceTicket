@@ -2,8 +2,7 @@
             
 // logic for popping @aoreed from email submit
             
-// $emailcheck = $_POST['email'];
-// $domain = explode( '@', $emailcheck);
+
 
 //function to check to see if all filds submitted.  
 //NEED TO INCORPORATE THIS INTO SCRIPT AND ALSO CHECK FOR @AOREED.COM DOMAIN
@@ -19,6 +18,18 @@ function fieldcheck() {
 
     return $submit_error;
 }
+
+function domaincheck() {
+    $domain_error = FALSE;
+    $emailcheck = $_POST['email'];
+    $domain = explode( '@', $emailcheck);
+    if ($domain != '@aoreed.com') {
+        $domain_error = TRUE;
+    }
+
+    return $domain_error;
+
+}
     if (isset($_POST['submit'])) {
 	
         //check to make sure all fields completed
@@ -30,7 +41,7 @@ function fieldcheck() {
         }
     }
     if($error) {
-        echo '<br><p style="font-size:20px">Please complete all required fields.</p>';
+        echo '<br><p style="font-size:20px">Submission error. Please complete all required fields.</p>';
         echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
         exit();
     }
@@ -48,6 +59,12 @@ function fieldcheck() {
         create_ticket($email, $subject, $body, $urgency, $api_key);
         
         echo '<br>';
+        if(fieldcheck()){
+            echo 'Error';
+        } else {
+            echo 'No Error';
+        };
+        echo getErrorDetails();
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
         echo'<br>';
@@ -55,6 +72,7 @@ function fieldcheck() {
 
     } 
 }
+
 		
 	
 ?>
