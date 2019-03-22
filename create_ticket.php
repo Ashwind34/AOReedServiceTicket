@@ -7,7 +7,7 @@ require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR 
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
-function create_ticket($email, $body, $urgency, $key){
+function create_ticket($email, $subject, $body, $urgency, $key){
 
     $subdomain = "Aorhelpdesk";
     $username  = $email; // email
@@ -26,7 +26,7 @@ function create_ticket($email, $body, $urgency, $key){
 
     // Create a new ticket
     $newTicket = $client->tickets()->create([
-        'subject'  => 'Web-Based Ticket Request',
+        'subject'  => $subject,
         'comment'  => [
             'body' => $body 
 
@@ -34,7 +34,6 @@ function create_ticket($email, $body, $urgency, $key){
         ],
         'priority' => $urgency
     ]);
-    print_r($newTicket);
 }
 
 ?>
