@@ -40,6 +40,7 @@ function create_ticket($email, $subject, $body, $urgency, $key){
         //echo 'Message: '.$e->getMessage();
         echo '<br><p style="font-size:20px">Submission Error.  Please check your @aoreed.com email and try again.</p>';
         echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
+        exit();
         
     }
 }

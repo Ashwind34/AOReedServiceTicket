@@ -59,11 +59,13 @@ function domaincheck() {
 
         create_ticket($email, $subject, $body, $urgency, $api_key);
         
-        echo '<br>';
+        
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
+        echo '<br>';
+        echo '<p><a href="index.html">Submit another service request</a></p>';
         echo'<br>';
-        echo '<br><p style="font-size:20px;"><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
+        echo '<br><p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
 
     } 
 }
