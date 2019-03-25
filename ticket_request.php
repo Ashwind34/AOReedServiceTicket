@@ -41,17 +41,24 @@ if (isset($_POST['submit'])) {
         exit();
     
     } else {
-    
-        //call create_ticket() to make api post request
-        //NEED TO SANITIZE INPUT DATA FOR API CALL
-
+        
+        //filter user input
+           
         require_once 'create_ticket.php';
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $body = $_POST['desc'];
+            
+        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+              
+        $filtered_email = filter_var($email, FILTER_VALIDATE_EMAIL);
+     
+        $subject = filter_var($_POST["subject"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+     
+        $body = filter_var($_POST["desc"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        
         $api_key = $key;
 
-        create_ticket($email, $subject, $body, $api_key);            
+        //call create_ticket() to make api post request
+
+        create_ticket($filtered_email, $subject, $body, $api_key);            
         
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
