@@ -33,6 +33,8 @@ function create_ticket($email, $subject, $body, $key){
 
             // ,'uploads' => [$attachment->upload->token]
         ],
+        
+        //REMOVED PRIORITY FIELD FROM FORM AND SUBMIT FUNCTION - PER CLIENT
         //'priority' => $urgency
     ]);
     }

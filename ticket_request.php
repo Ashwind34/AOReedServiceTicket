@@ -6,14 +6,14 @@
 
 function fieldcheck() {
     $fieldcheck = array('email', 'subject', 'desc');
-    $submit_error = FALSE;
+    $field_error = FALSE;
     foreach ($fieldcheck as $f) {
         if (empty($_POST[$f])){
-            $submit_error = TRUE;
+            $field_error = TRUE;
         }
     }
 
-    return $submit_error;
+    return $field_error;
 }
 
 //function to check to see if email is an @aoreed.com email address
@@ -22,31 +22,28 @@ function domaincheck() {
     $domain_error = FALSE;
     $emailcheck = $_POST['email'];
     $domain = explode( '@', $emailcheck);
-    if ($domain != '@aoreed.com') {
+    if ($domain[1] != 'aoreed.com') {
         $domain_error = TRUE;
     }
-
+    
     return $domain_error;
 
 }
-    if (isset($_POST['submit'])) {
-	
-        //check to make sure all fields completed
-        //MAY NOT BE NECESSARY
-        $fieldcheck = array('email', 'subject', 'desc');
-        $error = FALSE;
-        foreach ($fieldcheck as $f) {
-            if (empty($_POST[$f])) {
-            $error = TRUE;
-        }
-    }
-    if($error) {
+
+if (isset($_POST['submit'])) {
+
+    if(fieldcheck()) {
         echo '<br><p style="font-size:20px">Submission error. Please complete all required fields.</p>';
         echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
         exit();
-    }
-    else {
 
+    } elseif (domaincheck()) {
+        echo '<br><p style="font-size:20px">Submission error. Please make sure you are using your @aoreed.com email.</p>';
+        echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
+        exit();
+    
+    } else {
+    
         //call create_ticket() to make api post request
         //NEED TO SANITIZE INPUT DATA FOR API CALL
 
@@ -56,8 +53,7 @@ function domaincheck() {
         $body = $_POST['desc'];
         $api_key = $key;
 
-        create_ticket($email, $subject, $body, $api_key);
-        
+        create_ticket($email, $subject, $body, $api_key);            
         
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
@@ -68,6 +64,7 @@ function domaincheck() {
 
     } 
 }
+
 
 		
 	
