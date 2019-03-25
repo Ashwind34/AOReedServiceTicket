@@ -1,7 +1,5 @@
 <?php
 
-//CHECK WITH TIM TO SEE IF WE NEED REDUNDANT ERROR CHECKING
-
 //function to check to see if all filds submitted.
 
 function fieldcheck() {
