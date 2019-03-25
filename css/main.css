@@ -94,37 +94,6 @@ input[type=submit] {
   font-weight: bold;
 }
 
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-  
-.btn {
-  color: #d75229;
-  border: 2px solid #000;
-  background: transparent;
-  text-align: center;
-  padding: 9px 14px;
-  font-family: "Gotham Bold";
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 0;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  
-}
-  
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
 ::-webkit-input-placeholder {
   color: #777;
   font-family: 'Gotham Book Italic'
