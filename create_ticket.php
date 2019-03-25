@@ -7,7 +7,7 @@ require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR 
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
-function create_ticket($email, $subject, $body, $urgency, $key){
+function create_ticket($email, $subject, $body, $key){
 
     $subdomain = "Aorhelpdesk";
     $username  = $email; // email
@@ -33,7 +33,7 @@ function create_ticket($email, $subject, $body, $urgency, $key){
 
             // ,'uploads' => [$attachment->upload->token]
         ],
-        'priority' => $urgency
+        //'priority' => $urgency
     ]);
     }
     catch (Exception $e) {

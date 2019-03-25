@@ -125,11 +125,6 @@ input[type=submit] {
   opacity: 0;
 }
 
-.radiogroup{
-  font-size: 14px;
-  /* font-size: 0.8vw; */
-}
-
 ::-webkit-input-placeholder {
   color: #777;
   font-family: 'Gotham Book Italic'

@@ -5,7 +5,7 @@
 //function to check to see if all filds submitted.
 
 function fieldcheck() {
-    $fieldcheck = array('email', 'subject', 'desc', 'urgency');
+    $fieldcheck = array('email', 'subject', 'desc');
     $submit_error = FALSE;
     foreach ($fieldcheck as $f) {
         if (empty($_POST[$f])){
@@ -33,7 +33,7 @@ function domaincheck() {
 	
         //check to make sure all fields completed
         //MAY NOT BE NECESSARY
-        $fieldcheck = array('email', 'subject', 'desc', 'urgency');
+        $fieldcheck = array('email', 'subject', 'desc');
         $error = FALSE;
         foreach ($fieldcheck as $f) {
             if (empty($_POST[$f])) {
@@ -54,10 +54,9 @@ function domaincheck() {
         $email = $_POST['email'];
         $subject = $_POST['subject'];
         $body = $_POST['desc'];
-        $urgency = $_POST['urgency'];
         $api_key = $key;
 
-        create_ticket($email, $subject, $body, $urgency, $api_key);
+        create_ticket($email, $subject, $body, $api_key);
         
         
         echo '<br>';
