@@ -28,11 +28,7 @@ function domaincheck() {
 
 }
 
-function arrayread($array){
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-}
+//form validation and error handling
 
 if (isset($_POST['submit'])) {
 
@@ -47,8 +43,11 @@ if (isset($_POST['submit'])) {
         exit();
     
     } else {
-             
+        
+        //include api request function
         require_once 'create_ticket.php';
+
+        //include snapshot upload logic
         require_once 'fileupload.php';
 
         //filter user input
@@ -66,8 +65,6 @@ if (isset($_POST['submit'])) {
         //call create_ticket() to make api post request
 
         create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type);   
-        
-        arrayread($_FILES);
         
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';

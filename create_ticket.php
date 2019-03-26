@@ -1,17 +1,15 @@
 <?php
 
-//NEED TO ADD $UPLOAD PARAMETER AND ATTACHMENTS FUNCTIONALITY
-
 require_once 'vendor/autoload.php';
-require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
+require 'outside_root/creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
 function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
 
     $subdomain = "Aorhelpdesk";
-    $username  = $email; // email
-    $token     =  $key; // API key - NEED TO UPDATE FOR SECURITY
+    $username  = $email; // user email
+    $token     =  $key; // API key 
 
     $client = new ZendeskAPI($subdomain);
     $client->setAuth('basic', ['username' => $username, 'token' => $token]);
@@ -19,9 +17,8 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
     //create attachment
 
     $attachment = $client->attachments()->upload([
-        'file' => getcwd().'/img/'.$file_name,
+        'file' => getcwd().'/outside_root/'.$file_name,
         'type' => $file_type,
-        //'name' => 'UK.png' // Optional parameter, will default to filename.ext
     ]);
 
     // Create a new ticket
@@ -32,13 +29,11 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
             'body' => $body 
 
             ,'uploads' => [$attachment->upload->token]
-        ],
-        
-        //REMOVED PRIORITY FIELD FROM FORM AND SUBMIT FUNCTION - PER CLIENT
-        //'priority' => $urgency
+        ], 
     ]);
     }
     catch (Exception $e) {
+        //uncomment below if necessary for debugging api request issues
         //echo 'Message: '.$e->getMessage();
         echo '<br><p style="font-size:20px">Submission Error.  Please check your @aoreed.com email and try again.</p>';
         echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
