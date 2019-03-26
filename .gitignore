@@ -1,4 +1,4 @@
 projectrequestdetails.txt
-vendor/
+# vendor/
 creds.php
 /img
