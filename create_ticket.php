@@ -21,7 +21,7 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
     //create attachment
     
     $attachment = $client->attachments()->upload([
-        'file' => getcwd().'/outside_root/'.$file_name,
+        'file' => getcwd().'/outside_root/img/'.$file_name,
         'type' => $file_type,
     ]);
 
