@@ -28,6 +28,12 @@ function domaincheck() {
 
 }
 
+function arrayread($array){
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+}
+
 if (isset($_POST['submit'])) {
 
     if(fieldcheck()) {
@@ -41,10 +47,11 @@ if (isset($_POST['submit'])) {
         exit();
     
     } else {
-        
-        //filter user input
-           
+             
         require_once 'create_ticket.php';
+        require_once 'fileupload.php';
+
+        //filter user input
             
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
               
@@ -69,8 +76,5 @@ if (isset($_POST['submit'])) {
 
     } 
 }
-
-
-		
 	
 ?>
