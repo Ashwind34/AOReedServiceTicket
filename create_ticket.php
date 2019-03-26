@@ -1,7 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require 'outside_root/creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
+require '../outside_root/creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
@@ -14,8 +14,12 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
     $client = new ZendeskAPI($subdomain);
     $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 
-    //create attachment
+    //move working directory up one level to access screenshots outside root app directory
 
+    chdir('../');
+
+    //create attachment
+    
     $attachment = $client->attachments()->upload([
         'file' => getcwd().'/outside_root/'.$file_name,
         'type' => $file_type,
