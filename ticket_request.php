@@ -65,7 +65,9 @@ if (isset($_POST['submit'])) {
 
         //call create_ticket() to make api post request
 
-        //create_ticket($filtered_email, $subject, $body, $api_key);            
+        create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type);   
+        
+        arrayread($_FILES);
         
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';

@@ -7,7 +7,7 @@ require 'creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR 
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
-function create_ticket($email, $subject, $body, $key){
+function create_ticket($email, $subject, $body, $key, $file_name, $file_type){
 
     $subdomain = "Aorhelpdesk";
     $username  = $email; // email
@@ -18,11 +18,11 @@ function create_ticket($email, $subject, $body, $key){
 
     //create attachment
 
-    // $attachment = $client->attachments()->upload([
-    //     'file' => getcwd().'/tests/assets/UK.png',
-    //     'type' => 'image/png',
-    //     'name' => 'UK.png' // Optional parameter, will default to filename.ext
-    // ]);
+    $attachment = $client->attachments()->upload([
+        'file' => getcwd().'/img/'.$file_name,
+        'type' => $file_type,
+        //'name' => 'UK.png' // Optional parameter, will default to filename.ext
+    ]);
 
     // Create a new ticket
     try {
@@ -31,7 +31,7 @@ function create_ticket($email, $subject, $body, $key){
         'comment'  => [
             'body' => $body 
 
-            // ,'uploads' => [$attachment->upload->token]
+            ,'uploads' => [$attachment->upload->token]
         ],
         
         //REMOVED PRIORITY FIELD FROM FORM AND SUBMIT FUNCTION - PER CLIENT
