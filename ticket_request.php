@@ -64,14 +64,17 @@ if (isset($_POST['submit'])) {
 
         //call create_ticket() to make api post request
 
-        create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type);   
-        
+        create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type, $imagedir);
+
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
         echo '<p><a href="index.html">Submit another service request</a></p>';
-        echo '<br><p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
+        echo '<p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
 
-    } 
+        //delete uploaded screen shot, display message on fail
+
+    }
+     
 }
 	
 ?>
