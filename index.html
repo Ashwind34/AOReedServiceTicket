@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,25 +10,29 @@
 </head>
 <body>
     <div id="ticket_form">
-        <form action="ticket_request.php" method="post" enctype="multipart/form-data" autocomplete="off">
+        <form saction="ticket_request.php" method="post" enctype="multipart/form-data" autocomplete="off">
                 <fieldset class='container'>
                     <legend class="legend"><b>Ticket Request</b></legend>
-                        
-                        <p class="right"><img src="img/logo1.png" alt="logo"></p>
-                        
-                        <label for="email">Company Email</label><br>
-                        <input size=34 maxlength=40 type="email" placeholder="example@aoreed.com" name="email" required></input>
-                        
-                        <label for="subject">Subject</label><br>
-                        <input size=34 maxlength=40 type="text" placeholder="Subject" name="subject" required>
-                        
-                        <label for="desc">Description of Issue</label>
-                        <textarea placeholder="What's the problem?" name="desc" rows="10" cols="50" required></textarea>
-                        
-                        <label for="image">Upload Screen Shot</label><br>                            
-                        <input type="file" name="image" value="upload">                            
+                        <div class='email'>
+                            <label for="email">Company Email</label>
+                            <input maxlength=40 type="email" placeholder="example@aoreed.com" name="email" required></input>
+                        </div>                           
+                        <div class='img'>    
+                            <img src="img/logo1.png" alt="logo">
+                        </div>
+                        <div class='subject'>                            
+                            <label for="subject">Subject</label>
+                            <input maxlength=40 type="text" placeholder="Subject" name="subject" required>
+                        </div>
+                        <div class='email'> 
+                            <label for="desc">Description of Issue</label>
+                            <textarea placeholder="What's the problem?" name="desc" rows="10" cols="50" required></textarea>
+                        </div>   
+                        <div class='email'>   
+                            <label for="image">Upload Screen Shot</label>                            
+                            <input type="file" name="image" value="upload">
+                        </div>                             
                 </fieldset>
-
             <p style="text-align:center"><input class="submit" type="submit" name="submit" value="Submit Support Request"></p>
             <p><a href="http://www.aoreed.com" font-size='14px'>Return to Homepage</a></p>        
         </form>
