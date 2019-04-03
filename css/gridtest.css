@@ -30,9 +30,15 @@
   
   
   #ticket_form {
-    width: 240px;
+    width: 100vw;
     padding: 0 8px;
     display:flex;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
   }
   
   .legend {
@@ -74,6 +80,7 @@
   
   label {
     font-size: 16px;
+    font-family: 'Gotham Book'
     /* font-size: 1.1vw */
   }
   

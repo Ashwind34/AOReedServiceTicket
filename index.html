@@ -14,35 +14,27 @@
 <body>
     <div id="ticket_form">
         <form action="ticket_request.php" method="post" enctype="multipart/form-data" autocomplete="off">
-            <fieldset>
-                <legend class="legend"><b>Ticket Request</b></legend>
-                    <p class="right"><img src="img/logo1.png" alt="logo"></p>
-                    <ul>
-                        <li>
-                            <label for="email">Company Email</label><br>
-                            <input size=34 maxlength=40 type="email" placeholder="example@aoreed.com" name="email" required></input>
-                        </li>                        
-                        <li>
-                            <label for="subject">Subject</label><br>
-                            <input size=34 maxlength=40 type="text" placeholder="Subject" name="subject" required>
-                        </li>                            
-                        <li>
-                            <label for="desc">Description of Issue</label>
-                            <textarea placeholder="What's the problem?" name="desc" rows="10" cols="50" required></textarea>
-                        </li>
-                        <br>
-                        <li>
-                            <div>
-                                <label for="image">Upload Screen Shot</label><br>                            
-                                <input type="file" name="image" value="upload">                            
-                            </div>
-                        </li> 
-                    </ul>                    
-            </fieldset>
+                <fieldset class='container'>
+                    <legend class="legend"><b>Ticket Request</b></legend>
+                        
+                        <p class="right"><img src="img/logo1.png" alt="logo"></p>
+                        
+                        <label for="email">Company Email</label><br>
+                        <input size=34 maxlength=40 type="email" placeholder="example@aoreed.com" name="email" required></input>
+                        
+                        <label for="subject">Subject</label><br>
+                        <input size=34 maxlength=40 type="text" placeholder="Subject" name="subject" required>
+                        
+                        <label for="desc">Description of Issue</label>
+                        <textarea placeholder="What's the problem?" name="desc" rows="10" cols="50" required></textarea>
+                        
+                        <label for="image">Upload Screen Shot</label><br>                            
+                        <input type="file" name="image" value="upload">                            
+                </fieldset>
+
             <p style="text-align:center"><input class="submit" type="submit" name="submit" value="Submit Support Request"></p>
             <p><a href="http://www.aoreed.com" font-size='14px'>Return to Homepage</a></p>        
         </form>
-    </div>
-    
+    </div>   
 </body>
 </html>
