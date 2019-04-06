@@ -30,7 +30,6 @@
 
 #ticket_form {
   width: 100vw;
-  padding: 0 8px;
   display:flex;
 }
 
@@ -51,10 +50,12 @@
 .subject,
 .file {
   grid-column: 1 / 2;
+  padding: 0.5em;
 }
 
 .desc {
   grid-column: 1 /  span 2;
+  padding: 0.5em;
 
 }
 
@@ -86,6 +87,7 @@ textarea {
 
 label {
   font-size: 16px;
+  padding: 0.25em;
   font-family: 'Gotham Book'
   /* font-size: 1.1vw */
 }
