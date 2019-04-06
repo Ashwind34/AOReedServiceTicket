@@ -49,10 +49,13 @@
 
 .email, 
 .subject,
-.desc,
 .file {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column: 1 / 2;
+}
+
+.desc {
+  grid-column: 1 /  span 2;
+
 }
 
 .img {
