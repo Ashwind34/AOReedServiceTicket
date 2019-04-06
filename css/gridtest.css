@@ -31,7 +31,6 @@ body {
   margin: 0;
 }
 
-
 #ticket_form {
   width: 100vw;
   height: 100vh;
@@ -67,6 +66,8 @@ body {
 .img {
   grid-column-start: 2;
   grid-row: 1 / span 2;
+  justify-self: center;
+  align-self: center;
 }
 
 fieldset {
@@ -92,19 +93,19 @@ textarea {
   resize: none;
 }
 
+#warning {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+}
+
 label {
   font-size: 16px;
   padding: 0.25em;
   font-family: 'Gotham Book'
   /* font-size: 1.1vw */
 }
-
-/* input {
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-
-} */
 
 input[type=submit] {
   background: #d75229;

@@ -12,7 +12,7 @@
     <div id="ticket_form">
         <form saction="ticket_request.php" method="post" enctype="multipart/form-data" autocomplete="off">
                 <fieldset>
-                    <legend class="legend"><b>Ticket Request</b></legend>
+                    <legend class="legend"><b>IT Service Request</b></legend>
                     <div class='container'>
                         <div class='email'>
                             <label for="email">Company Email</label>
@@ -28,6 +28,7 @@
                         <div class='desc'> 
                             <label for="desc">Description of Issue</label>
                             <textarea placeholder="What's the problem?" name="desc" rows="10" required></textarea>
+                            <label id='warning'>*DO NOT INCLUDE ANY PASSWORDS</label>
                         </div>   
                         <div class='file'>   
                             <label for="image"s>Upload Screen Shot</label>                            
