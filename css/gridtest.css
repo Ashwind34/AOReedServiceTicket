@@ -63,6 +63,12 @@ body {
 
 }
 
+@media (max-width: 800px) {
+  .file{
+    display: none;
+  }
+}
+
 .img {
   grid-column-start: 2;
   grid-row: 1 / span 2;
