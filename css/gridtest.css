@@ -27,9 +27,16 @@
       local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff');
 }
 
+body {
+
+  margin: 0;
+
+}
+
 
 #ticket_form {
-  width: 100vw;
+  width: 98vw;
+  height: 98vh;
   display:flex;
 }
 
