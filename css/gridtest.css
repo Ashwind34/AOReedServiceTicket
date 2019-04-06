@@ -28,15 +28,13 @@
 }
 
 body {
-
   margin: 0;
-
 }
 
 
 #ticket_form {
-  width: 98vw;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
   display:flex;
 }
 
@@ -71,9 +69,11 @@ body {
   grid-row: 1 / span 2;
 }
 
-/* fieldset {
-  border: none;
-} */
+fieldset {
+  padding: 0.1em;
+  margin: 0.5em;
+  /* border: none; */
+}
 
 div {
   display: grid;
