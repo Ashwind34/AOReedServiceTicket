@@ -5,7 +5,8 @@
   font-family: 'Gotham Book';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff') format('woff'),
+  src: local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff2') format('woff2'),
+      local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff') format('woff'),
       local('Gotham Book'), url('./Fonts/Gotham/GothamBook.ttf') format('truetype');    
 }
     
@@ -14,7 +15,8 @@
   font-family: 'Gotham Book Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff') format('woff'),
+  src: local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff2') format('woff2'),
+      local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff') format('woff'),
       local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.ttf') format('truetype');
 }
 
@@ -23,7 +25,8 @@
   font-family: 'Gotham Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
+  src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff2') format('woff2'),
+      local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
       local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.ttf') format('truetype');
 }
 
@@ -40,7 +43,7 @@ body {
 .legend {
   color: #d75229;
   font-size: 20px;
-  /* font-family: 'Gotham Book'; */
+  font-family: 'Gotham Bold';
   font-weight: 'bold';
 }
 
@@ -130,7 +133,7 @@ input[type=submit] {
   padding: 9px 14px;
   text-transform: uppercase;
   font-style: normal;
-  /* font-family: "Gotham Bold"; */
+  font-family: "Gotham Bold";
   font-weight: bold;
   margin-bottom: 0.25em;
 }
@@ -139,23 +142,23 @@ input[type=submit] {
   color: #777;
   font-size: 12px;
   vertical-align:center;
-  /* font-family: 'Gotham Book Italic' */
+  font-family: 'Gotham Book Italic'
 }
 ::-moz-placeholder {
   color: #777;
   font-size: 12px;
   vertical-align:center;
-  /* font-family: 'Gotham Book Italic' */
+  font-family: 'Gotham Book Italic'
 }
 :-ms-input-placeholder {
   color: #777;
   font-size: 12px;
   vertical-align:center;
-  /* font-family: 'Gotham Book Italic' */
+  font-family: 'Gotham Book Italic'
 }
 ::placeholder {
   color: #777;
   font-size: 12px;
   vertical-align:center;
-  /* font-family: 'Gotham Book Italic' */
+  font-family: 'Gotham Book Italic'
 }
