@@ -25,6 +25,7 @@ if(isset($_FILES['image'])){
     } else {
         echo 'Unfortunately, your attachment was not submitted.  Please try again.';
         print_r($errors);
+        print_r($_FILES); //FOR TESTING, DELETE AFTER
     }
 } else {
     echo 'Unfortunately, your attachment was not submitted.  Please try again.';
