@@ -2,7 +2,7 @@
 
 $imagedir = "../../outside_root_aoreed/img/";
 
-if(isset($_FILES['image'])){
+if(!empty($_FILES['image']['name'])) {
     $errors= array();
     $file_name = $_FILES['image']['name'];
     $file_size = $_FILES['image']['size'];
@@ -24,10 +24,11 @@ if(isset($_FILES['image'])){
         move_uploaded_file($file_tmp, $imagedir.$file_name);
     } else {
         echo 'Unfortunately, your attachment was not submitted.  Please try again.';
+        echo '<br><p style="font-size:20px;"><a href="../index.html">Try Again</a></p>';
         print_r($errors);
-        print_r($_FILES); //FOR TESTING, DELETE AFTER
     }
 } else {
-    echo 'Unfortunately, your attachment was not submitted.  Please try again.';
+    $file_name = NULL;
+    // echo 'Unfortunately, your attachment was not submitted.  Please try again.';
 }
 ?>

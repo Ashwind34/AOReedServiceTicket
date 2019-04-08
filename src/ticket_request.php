@@ -1,6 +1,6 @@
 <?php
 
-//function to check to see if all filds submitted.
+//function to check to see if all fields submitted.
 
 function fieldcheck() {
     $fieldcheck = array('email', 'subject', 'desc');
@@ -70,8 +70,6 @@ if (isset($_POST['submit'])) {
         echo '<p>Success!  Your support request has been submitted!</p>';
         echo '<p><a href="../index.html">Submit another service request</a></p>';
         echo '<p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
-
-        //delete uploaded screen shot, display message on fail
 
     }
      

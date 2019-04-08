@@ -18,12 +18,14 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type, $i
 
     chdir('../');
 
-    //create attachment
-    
-    $attachment = $client->attachments()->upload([
-        'file' => getcwd().'../../outside_root_aoreed/img/'.$file_name,
-        'type' => $file_type,
-    ]);
+    //create attachment if file has been uploaded
+
+    if ($file_name != NULL) {    
+        $attachment = $client->attachments()->upload([
+            'file' => getcwd().'../../outside_root_aoreed/img/'.$file_name,
+            'type' => $file_type,
+        ]);
+    }
 
     // Create a new ticket
     try {
