@@ -2,9 +2,9 @@
   font-family: 'Gotham Book';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff') format('woff'),
-      local('Gotham Book'), url('./Fonts/Gotham/GothamBook.ttf') format('truetype');
-    
+  src: local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff2') format('woff2'),
+      local('Gotham Book'), url('./Fonts/Gotham/GothamBook.woff') format('woff'),
+      local('Gotham Book'), url('./Fonts/Gotham/GothamBook.ttf') format('truetype');    
 }
     
     
@@ -12,7 +12,8 @@
   font-family: 'Gotham Book Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff') format('woff'),
+  src: local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff2') format('woff2'),
+      local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.woff') format('woff'),
       local('Gotham Book Italic'), url('./Fonts/Gotham/GothamBookItalic.ttf') format('truetype');
 }
 
@@ -21,64 +22,104 @@
   font-family: 'Gotham Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
-      local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff');
+  src: local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff2') format('woff2'),
+      local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.woff') format('woff'),
+      local('Gotham Bold'), url('./Fonts/Gotham/GothamBold.ttf') format('truetype');
 }
 
+@media (max-width: 800px) {
+  .file{
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+}
 
 #ticket_form {
-  width: 240px;
-  /* padding: 0 8px; */
+  width: 100vw;
+  height: 100vh;
   display:flex;
 }
 
 .legend {
   color: #d75229;
-  /* font-size: 20px; */
-  font-size: 2vw;
+  font-size: 20px;
   font-family: 'Gotham Bold';
+  font-weight: 'bold';
 }
 
-.right {
-  float: right;
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: start;
+}
+
+.email, 
+.subject {
+  grid-column: 1 / 2;
+  padding: 0.5em;
+}
+
+.desc,
+.file {
+  grid-column: 1 /  span 2;
+  padding: 0.5em;
+
+}
+
+.img {
+  grid-column-start: 2;
+  grid-row: 1 / span 2;
+  justify-self: center;
+  align-self: center;
+}
+
+fieldset {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+div {
+  display: grid;
 }
 
 p, a {
   font-family: 'Gotham Book';
-  /* font-weight: 100; */
+  font-weight: 100;
   color: #d75229;
   text-align:center;
-}
-
-form ul {
-  list-style-type: none;
-  padding-left: 0;
-  color: #58595b;
-}
-
-form li {
-  margin: 0 0 6px 0;
-  font-family: 'Gotham Book'
 }
 
 textarea {
   vertical-align: top;
   border-color: lightgray;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-family: 'Gotham Book'
+}
+
+#warning {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0.75em;
 }
 
 label {
-  /* font-size: 16px; */
-  font-size: 1.1vw
+  font-size: 16px;
+  padding: 0.25em;
+  font-family: 'Gotham Book'
 }
 
 input {
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-family: 'Gotham Book'
 }
 
 input[type=submit] {
@@ -86,31 +127,36 @@ input[type=submit] {
   color: #fff;
   border: 2px solid #d75229;
   text-align: center;
-  font-size: 1vw;
-  /* padding: 9px 14px; */
+  font-size: 16px;
+  padding: 9px 14px;
   text-transform: uppercase;
   font-style: normal;
   font-family: "Gotham Bold";
   font-weight: bold;
+  margin-bottom: 0.25em;
 }
 
 ::-webkit-input-placeholder {
   color: #777;
+  font-size: 12px;
+  vertical-align:center;
   font-family: 'Gotham Book Italic'
-  /* font-size: 13px; */
 }
 ::-moz-placeholder {
   color: #777;
+  font-size: 12px;
+  vertical-align:center;
   font-family: 'Gotham Book Italic'
-  /* font-size: 13px; */
 }
 :-ms-input-placeholder {
   color: #777;
+  font-size: 12px;
+  vertical-align:center;
   font-family: 'Gotham Book Italic'
-  /* font-size: 13px; */
 }
 ::placeholder {
   color: #777;
+  font-size: 12px;
+  vertical-align:center;
   font-family: 'Gotham Book Italic'
-  /* font-size: 13px; */
 }
