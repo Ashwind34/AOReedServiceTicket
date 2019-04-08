@@ -1,7 +1,7 @@
 <?php
 
-require_once 'vendor/autoload.php';
-require '../outside_root_aoreed/creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
+require_once '../vendor/autoload.php';
+require '../../outside_root_aoreed/creds.php'; //IMPORTS API KEY FROM LOCAL FILE - NEED TO RE-DO THIS FOR SECURITY BEFORE PRODUCTION
 
 use Zendesk\API\HttpClient as ZendeskAPI;
 
@@ -21,7 +21,7 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type, $i
     //create attachment
     
     $attachment = $client->attachments()->upload([
-        'file' => getcwd().'/outside_root_aoreed/img/'.$file_name,
+        'file' => getcwd().'../../outside_root_aoreed/img/'.$file_name,
         'type' => $file_type,
     ]);
 
@@ -36,7 +36,7 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type, $i
         ], 
     ]);
         // delete uploaded file immediately after api request
-        if (!unlink(getcwd().'/outside_root_aoreed/img/'.$file_name)) {
+        if (!unlink(getcwd().'../../outside_root_aoreed/img/'.$file_name)) {
             echo 'Unable to delete screenshot';
         } 
     }

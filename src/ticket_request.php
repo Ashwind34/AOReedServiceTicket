@@ -34,12 +34,12 @@ if (isset($_POST['submit'])) {
 
     if(fieldcheck()) {
         echo '<br><p style="font-size:20px">Submission error. Please complete all required fields.</p>';
-        echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
+        echo '<br><p style="font-size:20px;"><a href="../index.html">Try Again</a></p>';
         exit();
 
     } elseif (domaincheck()) {
         echo '<br><p style="font-size:20px">Submission error. Please make sure you are using your @aoreed.com email.</p>';
-        echo '<br><p style="font-size:20px;"><a href="index.html">Try Again</a></p>';
+        echo '<br><p style="font-size:20px;"><a href="../index.html">Try Again</a></p>';
         exit();
     
     } else {
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
-        echo '<p><a href="index.html">Submit another service request</a></p>';
+        echo '<p><a href="../index.html">Submit another service request</a></p>';
         echo '<p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
 
         //delete uploaded screen shot, display message on fail

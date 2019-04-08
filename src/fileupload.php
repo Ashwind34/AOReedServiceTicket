@@ -1,6 +1,6 @@
 <?php
 
-$imagedir = "../outside_root_aoreed/img/";
+$imagedir = "../../outside_root_aoreed/img/";
 
 if(isset($_FILES['image'])){
     $errors= array();
