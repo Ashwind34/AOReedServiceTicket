@@ -66,6 +66,14 @@ if (isset($_POST['submit'])) {
 
         create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type, $imagedir);
 
+        // delete uploaded file immediately after api request
+
+        if ($file_name !== NULL) {
+            unlink(getcwd().'../../outside_root_aoreed/img/'.$file_name);
+        } 
+
+        //echo success message and links
+
         echo '<br>';
         echo '<p>Success!  Your support request has been submitted!</p>';
         echo '<p><a href="../index.html">Submit another service request</a></p>';

@@ -37,10 +37,7 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type, $i
             ,'uploads' => [$attachment->upload->token]
         ], 
     ]);
-        // delete uploaded file immediately after api request
-        if (!unlink(getcwd().'../../outside_root_aoreed/img/'.$file_name)) {
-            echo 'Unable to delete screenshot';
-        } 
+
     }
     catch (Exception $e) {
         //uncomment below if necessary for debugging api request issues
