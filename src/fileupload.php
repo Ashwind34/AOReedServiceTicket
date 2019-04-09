@@ -29,6 +29,5 @@ if(!empty($_FILES['image']['name'])) {
     }
 } else {
     $file_name = NULL;
-    // echo 'Unfortunately, your attachment was not submitted.  Please try again.';
 }
 ?>

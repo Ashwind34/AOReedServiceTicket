@@ -28,13 +28,13 @@ function create_ticket($email, $subject, $body, $key, $file_name, $file_type, $i
     }
 
     // Create a new ticket
+    
     try {
         $newTicket = $client->tickets()->create([
         'subject'  => $subject,
         'comment'  => [
-            'body' => $body 
-
-            ,'uploads' => [$attachment->upload->token]
+            'body' => $body ,
+            'uploads' => [$attachment->upload->token]
         ], 
     ]);
 
