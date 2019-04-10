@@ -19,7 +19,7 @@ if(!empty($_FILES['image']['name'])) {
     }
     
     if(empty($errors)==true) {
-        move_uploaded_file($file_tmp, $imagedir.$file_name);
+        move_uploaded_file($file_tmp, __DIR__.$imagedir.$file_name);
     } else {
         echo 'Unfortunately, your attachment was not submitted.  Please try again.';
         echo '<br><p style="font-size:20px;"><a href="../index.html">Try Again</a></p>';

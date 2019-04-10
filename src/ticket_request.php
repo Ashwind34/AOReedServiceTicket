@@ -1,7 +1,7 @@
 <?php
 
 //include variables and paths from outside root web directory
-require_once '../../outside_root/vars.php';
+require_once __DIR__.'/../../outside_root/vars.php';
 
 //function to check to see if all fields submitted.
 
@@ -57,6 +57,13 @@ if (isset($_POST['submit'])) {
      
         $body = filter_var($_POST["desc"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+        echo($_SERVER['DOCUMENT_ROOT']).'<br>';
+        echo(dirname(__FILE__)).'<br>';
+        echo(__DIR__.'/directorynamehere').'<br>';
+        echo($subdomain).'<br>';
+        echo($imagedir).'<br>';
+
+
         //include snapshot image upload logic
         require_once 'fileupload.php';
 
@@ -66,7 +73,7 @@ if (isset($_POST['submit'])) {
         // delete uploaded file immediately after api request
 
         if ($file_name !== NULL) {
-            unlink(getcwd().$imagedir.$file_name);
+            unlink(__DIR__.$imagedir.$file_name);
         } 
 
         //echo success message and links
