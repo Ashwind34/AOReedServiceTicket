@@ -31,8 +31,8 @@ if(!empty($_FILES['image']['name'])) {
 
     //move image file from tmp dir to permanent dir outside app root dir
     
-    if(empty($error)==true) {
-        move_uploaded_file($file_tmp, $imagedir.$file_name);
+    if(empty($errors)==true) {
+        move_uploaded_file($file_tmp, __DIR__.$imagedir.$file_name);
     } else {
         echo 'Unfortunately, your attachment was not submitted.  Please try again.<br>';        
         echo $error;

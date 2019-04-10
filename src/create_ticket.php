@@ -7,15 +7,11 @@ use Zendesk\API\HttpClient as ZendeskAPI;
 $client = new ZendeskAPI($subdomain);
 $client->setAuth('basic', ['username' => $email, 'token' => $key]);
 
-//move working directory up one level to access screenshots outside root app directory
-
-chdir('../');
-
 //create attachment if file has been uploaded
 
 if ($file_name != NULL) {    
     $attachment = $client->attachments()->upload([
-        'file' => getcwd().$imagedir.$file_name,
+        'file' => __DIR__.$imagedir.$file_name,
         'type' => $file_type,
     ]);
 }
