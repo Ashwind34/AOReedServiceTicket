@@ -28,7 +28,7 @@ function domaincheck() {
     }
     
     return $domain_error;
-
+    
 }
 
 //form validation and error handling
