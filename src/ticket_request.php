@@ -1,5 +1,8 @@
 <?php
 
+//include variables and paths from outside root web directory
+require_once '../../outside_root/vars.php';
+
 //function to check to see if all fields submitted.
 
 function fieldcheck() {
@@ -44,32 +47,26 @@ if (isset($_POST['submit'])) {
     
     } else {
         
-        //include api request function
-        require_once 'create_ticket.php';
-
-        //include snapshot upload logic
-        require_once 'fileupload.php';
-
         //filter user input
             
-        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+        $pre_email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
               
-        $filtered_email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        $email = filter_var($pre_email, FILTER_VALIDATE_EMAIL);
      
         $subject = filter_var($_POST["subject"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      
         $body = filter_var($_POST["desc"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        
-        $api_key = $key;
 
-        //call create_ticket() to make api post request
+        //include snapshot image upload logic
+        require_once 'fileupload.php';
 
-        create_ticket($filtered_email, $subject, $body, $api_key, $file_name, $file_type, $imagedir);
-
+        //make api request
+        require_once 'create_ticket.php';         
+   
         // delete uploaded file immediately after api request
 
         if ($file_name !== NULL) {
-            unlink(getcwd().'../../outside_root_aoreed/img/'.$file_name);
+            unlink(getcwd().$imagedir.$file_name);
         } 
 
         //echo success message and links

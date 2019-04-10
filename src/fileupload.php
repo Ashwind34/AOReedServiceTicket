@@ -1,7 +1,5 @@
 <?php
 
-$imagedir = "../../outside_root_aoreed/img/";
-
 if(!empty($_FILES['image']['name'])) {
     $errors= array();
     $file_name = $_FILES['image']['name'];
@@ -28,6 +26,7 @@ if(!empty($_FILES['image']['name'])) {
         print_r($errors);
     }
 } else {
+    
     $file_name = NULL;
 }
 ?>
