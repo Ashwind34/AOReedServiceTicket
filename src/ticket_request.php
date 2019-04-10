@@ -57,13 +57,6 @@ if (isset($_POST['submit'])) {
      
         $body = filter_var($_POST["desc"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        echo($_SERVER['DOCUMENT_ROOT']).'<br>';
-        echo(dirname(__FILE__)).'<br>';
-        echo(__DIR__.'/directorynamehere').'<br>';
-        echo($subdomain).'<br>';
-        echo($imagedir).'<br>';
-
-
         //include snapshot image upload logic
         require_once 'fileupload.php';
 
