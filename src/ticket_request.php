@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
         //make api request
         require_once 'create_ticket.php';         
    
-        // delete uploaded file immediately after api request
+        //delete uploaded file immediately after api request
 
         if ($file_name !== NULL) {
             unlink(__DIR__.$imagedir.$file_name);
@@ -72,9 +72,9 @@ if (isset($_POST['submit'])) {
         //echo success message and links
 
         echo '<br>';
-        echo '<p>Success!  Your support request has been submitted!</p>';
-        echo '<p><a href="../index.html">Submit another service request</a></p>';
-        echo '<p><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
+        echo '<p style="font-size:20px">Success!  Your support request has been submitted!</p>';
+        echo '<p style="font-size:20px"><a href="../index.html">Submit another service request</a></p>';
+        echo '<p style="font-size:20px"><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
 
     }
      
