@@ -1,7 +1,7 @@
 <?php
 
 //include variables and paths from outside root web directory
-require_once __DIR__.'/../../outside_root/vars.php';
+require_once __DIR__.'/vars.php';
 
 //function to check to see if all fields submitted.
 
@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
         exit();
 
     } elseif (domaincheck()) {
-        echo '<br><p style="font-size:20px">Submission error. Please make sure you are using your @aoreed.com email.</p>';
+        echo '<br><p style="font-size:20px">Submission error. Please make sure you are using your @company.com email.</p>';
         echo '<br><p style="font-size:20px;"><a href="../index.html">Try Again</a></p>';
         exit();
     
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
         echo '<br>';
         echo '<p style="font-size:20px">Success!  Your support request has been submitted!</p>';
         echo '<p style="font-size:20px"><a href="../index.html">Submit another service request</a></p>';
-        echo '<p style="font-size:20px"><a href="http://www.aoreed.com">Return to Aoreed.com</a></p>';
+        echo '<p style="font-size:20px"><a href="http://www.google.com">Return to Home Page</a></p>';
 
     }
      
