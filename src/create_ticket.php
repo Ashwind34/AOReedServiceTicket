@@ -31,7 +31,7 @@ try {
 catch (Exception $e) {
     //uncomment below if necessary for debugging api request issues
     //echo 'Message: '.$e->getMessage();
-    echo '<br><p style="font-size:20px">Submission Error.  Please check your @company.com email and try again.</p>';
+    echo '<br><p style="font-size:20px">Submission Error.  Please check your email and try again.</p>';
     echo '<br><p style="font-size:20px"><a href="../index.html">Try Again</a></p>';
     exit();
     

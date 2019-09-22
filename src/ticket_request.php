@@ -17,13 +17,13 @@ function fieldcheck() {
     return $field_error;
 }
 
-//function to check to see if email is an @aoreed.com email address
+//function to check to see if email is a company email address
 
 function domaincheck() {
     $domain_error = FALSE;
     $emailcheck = $_POST['email'];
     $domain = explode( '@', $emailcheck);
-    if ($domain[1] != 'aoreed.com') {
+    if ($domain[1] != $subdomain) {
         $domain_error = TRUE;
     }
     
